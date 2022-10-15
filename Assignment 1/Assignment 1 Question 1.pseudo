@@ -1,0 +1,35 @@
+function func(param) {
+    for (set i = 0 ,i < assignment.length(),i++) do
+        char key_word = assignment[i];// key_word meaning the each one element in the mathmatical expression 
+        if (key_word = "(" or "[" or "{") {
+            stack.puch(key_word);
+        } //if key_word is "(" or "[" or "{" push to the stack  
+        if (key_word = ")" or "]" or "}")
+        char recheck = stack.pop() // recheck meaning the which one of the element first pop in the stack 
+            if (recheck == "(" and key_word == ")") {
+                stack.pop(); // if matching pop the first element in the stack 
+            }
+            if (recheck == "[" and key_word == ")") {
+                stack.pop();
+            }
+            if (recheck == "{" and key_word == ")") {
+                stack.pop();
+            }
+            else { //if the element can not matching first one in the stack that meaning have a mistake like (] that 
+                print "miss a" recheck "in this mathematical expression on the location " i // recheck meaning wich kind of parentheses and 
+                return False                                                                 //i meaning the location in the mathmatical 
+            }
+
+        }
+    end 
+// if all have matching that meaing the stack should be empty 
+if (stack.isempty()) {
+    return True 
+}
+// if the stack still have one char that meaning this mathmatical expression have one more useless "(" or "[" or "{" at the begin 
+else{
+    char miss_one = stack.pop;
+    print "you hava one more " miss_one "can not find the matching in this mathematical expression"
+    return False 
+}
+}

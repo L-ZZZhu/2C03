@@ -1,0 +1,35 @@
+
+Selectionsort(double_linked_list list) {
+    if (list.head == null) {//if the list is null that meaning we dont need do anything.
+        return list;
+    }
+    node list_long = list.head;
+    int long = 1; //because we need use next to get the length of the list of we can not begin from 0 should begin from 1
+    while (list_long.next != null) { 
+        long++;
+        list_long = list_long.next 
+    } // get the long of the list thus know the loop time
+    for (int i = 0, i < long, i ++) {
+        node front =list.head
+        node list_next =list.next 
+        while (list_next != null) {
+            if (list_next.value<front.value){      //  front = 5 . 4 . 6 list_next= 4 . 6
+                front.next =list_next.next         //  front = 5 . 6     list_next= 4 . 6 
+                list_next.next =front.head         //  front = 5 . 6     list_next= 4 . 5 . 6  
+                node buffer = front . head         //  front = 5 . 6     list_next= 4 . 5 . 6 buffer= 5 . 6
+                front .head = list_next .head      //  front = 4 . 5 . 6 list_next= 4 . 5 . 6 buffer= 5 . 6
+                list_next.head =buffer .head       //  front = 4 . 5 . 6 list_next= 5 . 6     buffer= 5 . 6 
+                buffer.clear                       //  front = 4 . 5 . 6 list_next= 5 . 6 
+                list_next =list_next.next          //  front = 4 . 5 . 6 list_next= 6 
+                front =front.next                  //  front = 5 . 6     list_next= 5 . 6 
+            }
+            // one time check finally 
+        }
+        // why we need this loop for the how much element time 
+        //because maybe a minimum on the right least one and that only one time each one time 
+        //loop so that at least need long-1 time the least one time just for check
+        
+    }
+    // when the everyone element we will get a new one sort list
+    return list;
+}
