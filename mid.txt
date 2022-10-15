@@ -1,0 +1,62 @@
+procedure rotate_half (Node L, int which){//which meaning which one to be the center
+if L.head==NUll return L.head;
+
+if (which>L.size()){
+int m;					//if which >L.size() that mean he need choose another one 
+scanner m;
+rotate_half(L,m)
+}
+
+Node current =L.head; //[1 , 3 , 6 , 5 , 7 , 8]
+for (int i=0;i<which,i++){
+current=current.next 
+}
+
+if (current.prev==NUll){ // when current.value=1
+for (int i=0,i<L.size(),i++){
+current = current.next;
+}
+Node left_Node=NUll;   //if the left side of current is null
+                       // current =the end one list and make a new list to get a new list;
+for (int i=0,i<L.size(),i++){
+left_Node.next=current;
+left_node=left_node.next;
+current=current.prev;
+}return Left_Node;  //after all put in to the left_node=[8 , 7 , 5 , 6 , 3 , 1]
+}
+
+if (current.next==NUll){
+for (int i=0,i<L.size(),i++){
+current = current.prev;
+}
+Node right_Node=NUll;
+for (int i=0,i<L.size(),i++){
+right_Node.next=current;          //if the center in the right side of L
+right_node=right_node.next;
+current=current.prev;
+}return right_Node
+}
+
+//if current are not the first one or last one right now
+Node L_buffer=current
+NOde R_buffer=current;                      // use L and R make both side change
+node buffer=current.head
+for (int i =0;i< L.size()-which,i++){
+buffer=buffer.next
+}
+for (int i =0;i< L.size()-which,i++){
+R_buffer.next=buffer;
+buffer=buffer.prev;
+R_buffer=R_buffer.next
+}
+while (buffer.prev!=NUll){
+buffer=buffer.prev;
+}
+for (int i =0;i< which-1,i++){
+L_buffer.prev=buffer;
+buffer=buffer.next;
+L_buffer=L_buffer.prev
+}
+return L_buffer;             //because the L_buffer is the first one after .prev so return it.
+}
+
